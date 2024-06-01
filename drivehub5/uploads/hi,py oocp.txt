@@ -1,0 +1,445 @@
+#  oops concepts
+# class is a blue print of the object
+# object is a insteance of the class
+# e
+# class student:
+#    name = "karan"
+    
+# s1 = student()
+# print(s1.name + "for s1")
+
+# s2 = student()
+# print(s2.name + "for s2")
+
+# e
+# class car:
+#     color = "blue"
+#     city = "surat"
+    
+# car1 = car()
+# print(car1.color)
+# print(car1.city)
+
+
+# constructor in class it is alos known as a __init__ function
+# __init__ fucntion is always executed when the object is being initiated
+# if not use innit function py is autometically take innit fucntion
+# constrcutor always take a once argument which is a self (as refreance) para
+# which is data to be store that is known as attribute
+# and which data store inside a variables that also known as attributes
+# e
+# class student:
+#     name = "drashti"
+#     def __init__(self):
+#         # print(self) #student object
+#         print("this is my first constructor")
+        
+# s1 = student()
+
+# e
+# class student:
+#     def __init__(self,fullname):
+#         self.name = fullname
+#         print(self.name + "  " +"this is my first constructor")
+        
+# s1 = student("drashti")
+# print(s1.name)
+
+# s1 = student("priya")
+# print(s1.name)
+
+
+# defal. constr.
+# class student:
+#     #defalut cons.
+#     def __init__(self):
+#         print("this is my first defalut constructor") # or pass
+        
+#     #para const.
+#     def __init__(self,fullname):
+#         self.name = fullname
+#         print(self.name + "  " +"this is my first constructor")
+        
+# s1 = student("drashti")
+# print(s1.name)
+
+
+# classes and insteance attributes
+# class attributes is common for all the object
+# object attributes is diffrent for all object
+
+#class attributes
+# same name for all the object
+# when attributes same for all object we create a class attribute
+# class student:
+#     clg_name = "cs"
+#     def __init__(self,sname):
+#         self.name = sname
+#         # print(self.name)
+    
+# s1 = student("drashti")
+# print(s1.clg_name)
+# print(s1.name)
+
+# obj atr > class atr
+# class student:
+#     name = "cs"
+#     def __init__(self,sname):
+#         self.name = sname        
+    
+# s1 = student("drashti")
+# print(s1.name)
+
+#class is a collection of data and method
+
+# class stuent:
+#     def __init__(self,fullname,age):
+#         self.name = fullname
+#         self.age = age
+    
+#     def helo(self):
+#         print("hello how are you " + " " + self.name)
+        
+#     def agee(self):
+#         return self.age
+    
+# s1 = stuent("priya",19)
+# s1.helo()
+# print(s1.agee())
+
+
+# final example
+
+# class student:
+#     def __init__(self,name,marks):
+#      self.name = name
+#      self.marks = marks
+    
+#     def get_avg(self):
+#         sum = 0
+#         for val in self.marks:
+#             sum = sum + val
+#         print(sum/3)
+        
+# s1 = student("drashti",[15,15,15])
+# s1.get_avg()
+
+
+#static method  = dont use self parameter ( work at class level, not work at object level)
+#decorator is a convert normal function to static method ( work take entire function as a input and chnage that behavior and give ouput )
+# class student:
+#     @staticmethod #decorator
+#     def helo():
+#         print("hello this is a static method")
+        
+#     def __init__(self,name,marks):
+#      self.name = name
+#      self.marks = marks
+    
+#     def get_avg(self):
+#         sum =0
+#         for val in self.marks:
+#             sum = sum +val
+#         print(sum/3)
+        
+# s1 = student("drashti",[15,15,15])
+# s1.get_avg()
+# s1.helo()
+
+# abstraction = hiding the implementaion of class and show only the imporatant features to the user car and engine
+# class car:
+#     def __init__(self):
+#         self.acc = False
+#         self.brk = False
+#         self.clutch = False
+#         print("car is stop..")
+        
+#     def start(self):
+#         self.clutch = True
+#         self.acc = True
+#         self.brk = True
+#         print("car is started..")
+        
+# c1 = car()
+# c1.start()
+
+# encapsulation = data + relateddata = capsul  example class (data and method)
+# wrapping data and function into a single unit (object)
+
+# qe1
+# create a account class with 2 attributes - balance & account no. create methods for debit,credit & printing the balance
+
+# class account:
+#     def __init__(self,balance,accountno):
+#         self.b = balance  #10000
+#         self.accno = accountno
+    
+#     def credit(self,amount): #1000
+#         self.b = self.b  +  amount
+#         print("your balance is credited")
+    
+#     def debit(self,dm):
+#         self.b = self.b - dm
+#         print("your amount is debited and total amount is ")
+#         print(self.b)
+        
+#     def balance(self):
+#         print(self.b)
+        
+# a1 = account(10000,3434)
+# a1.credit(1000)
+# a1.debit(1)
+# a1.balance()
+
+
+#del keyword
+
+# class student:
+#     def __init__(self,name):
+#         self.name = name
+#         print(self.name)
+
+# s1 = student("drashti")
+# print(s1.name)
+# del s1
+# print(s1.name)
+
+#private attribute and methods
+
+# class account:
+#     def __init__(self,accno,accpassword):
+#         self.accno = accno
+#         self.__accpassword = accpassword #make a private
+    
+#     def resset(self):
+#         print(self.__accpassword)
+        
+# a1 = account("1234","abcsd")
+# print(a1.accno)
+# print(a1.accpassword)
+# a1.resset()
+
+# class person:
+#     __name = "unknown"
+#     def pr(self):
+#         print(self.__name)
+    
+# p1 = person()
+# p1.pr()
+# print(p1.__name)
+
+
+#inheritance =  one class derives the propertices & method of another class
+# example of single inheritance  = base class --->> derived class
+# class car:
+#     color = "black"
+#     @staticmethod
+#     def strat():
+#         print("car strated..")
+    
+#     @staticmethod
+#     def stop():
+#         print("cars stoped..")
+    
+# class toyota(car):
+#     def __init__(self,name):
+#         self.name = name
+        
+# car1 = toyota("fortuner")
+# car1.strat()
+# car1.stop()
+# print(car1.color)
+
+
+# types of inheritance 
+# 1. single inheritance  = base class --->> derived class
+# 2. multilevel inheritance = base class-->drived class --> derived class
+#super method
+# class car:
+#     @staticmethod
+#     def start():
+#         print("car strated.")
+    
+#     @staticmethod
+#     def stop():
+#         print("car stoped")
+        
+# class toyota(car):
+#     def __init__(self,brand):
+#         self.brand = brand
+#         print(self.brand)
+        
+# class fortuner(toyota):
+#     def __init__(self,type,brand):
+#        self.type = type
+#        super().__init__(brand)
+#        super().start()
+       
+# c1 = fortuner("petrol","abs")
+
+
+# 3. multiple inheritance
+#             base 1        base 2
+                #    derived
+                
+                
+# class A:
+#     var1 = "welcome to class a"
+
+# class B:
+#     va2 = "welcome to class b"
+#     def __init__(self,name):
+#         self.name = name
+#         print(self.name)
+    
+# class C(A, B):
+#     var3 = "welcome to class c"
+#     def __init__(self,name):
+#         super().__init__(name)
+    
+# c1 = C("drashti")
+# print(c1.var1)
+# print(c1.va2)
+# print(c1.var3)
+
+# getattr,setattr,property = decorator
+
+# polymorphism
+# - operator overloading
+# when the same oprator is allowd to have diffrent meaning according to the context.
+# a+b  = a.__add__(b)
+# a-b
+# a*b
+# a/b
+# a%b
+# double underscore function dunder function
+
+# imlicit overloading
+# print([1,2,3] + [4,5,6]) #return list
+# print(type[1,2,3])
+# print(1+2) #3
+# print("drashti" + "patoliya") #merge
+
+# complex number 1i + 2j 1i(real part) + 2j (img part)
+
+# class complex:
+#     def __init__(self,real,img):
+#         self.real = real
+#         self.img = img
+        
+#     def shownumber(self):
+#         print(self.real,"i +",self.img,"j")
+        
+#     def __add__(self,num2): #self is num1
+#         newreal = self.real + num2.real
+#         newimg = self.img + num2.img
+#         return complex(newreal,newimg)
+        
+# num1 = complex(1,3)
+# num1.shownumber()
+
+# num2 = complex(1,3)
+# num2.shownumber()
+
+# num3 = num1 + num2
+# num3.shownumber()
+
+
+# aubstract
+
+# class complex:
+#     def __init__(self,real,img):
+#         self.real = real
+#         self.img = img
+        
+#     def shownumber(self):
+#         print(self.real,"i -",self.img,"j")
+        
+#     def __sub__(self,num2): #self is num1
+#         newreal = self.real - num2.real
+#         newimg = self.img - num2.img
+#         return complex(newreal,newimg)
+        
+# num1 = complex(1,3)
+# num1.shownumber()
+
+# num2 = complex(1,3)
+# num2.shownumber()
+
+# num3 = num1 - num2
+# num3.shownumber()
+
+# exception handling
+
+
+# try:
+#     num1 = int(input("Enter a number: "))
+#     if num1 < 0:
+#         raise ValueError("Please enter a positive number.")
+    
+#     num2 = int(input("Enter another number: "))
+#     if num2 == 0:
+#         raise ZeroDivisionError("Cannot divide by zero.")
+    
+#     result = num1 / num2
+#     print("Result:", result)
+# except ValueError as ve:
+#     print(ve)
+# except ZeroDivisionError as zde:
+#     print(zde)
+   
+   
+# dimond problem
+
+# class A:
+#     def met(self):
+#         print("this is a method from class A")
+    
+# class B(A):
+#     def met(self): 
+#      print("this is a method from class b")
+       
+# class C(A):
+#     def met(self):
+#         print("this is a method of class c") 
+
+# class D(C,B):
+#     def met(self):
+#         print("this is a method form class D")
+        
+# a = A()
+# b = B()
+# c = C()
+# d = D()
+
+# d.met()
+
+
+# fucntion overload
+def add(x, y=0):
+    return x + y
+
+print(add(2, 3))  # Output: 5
+print(add(2))     # Output: 2
+
+
+#fucntion override
+class Animal:
+    def make_sound(self):
+        print("Some generic sound")
+
+class Dog(Animal):
+    def make_sound(self):
+        print("Woof!")
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow!")
+
+# Instances of subclasses
+dog = Dog()
+cat = Cat()
+
+# Calling overridden methods
+dog.make_sound()  # Output: Woof!
+cat.make_sound()  # Output: Meow!
